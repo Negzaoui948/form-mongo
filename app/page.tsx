@@ -25,12 +25,12 @@ export default function LivrePage() {
   });
 
   const handleChange = (
-  e: React.ChangeEvent<
-    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-  >
-) => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -59,7 +59,7 @@ export default function LivrePage() {
         try {
           const errorData = await res.json();
           errorMessage = errorData.message || errorMessage;
-        } catch  {
+        } catch {
           errorMessage = `Erreur serveur: ${res.status} ${res.statusText}`;
         }
         alert(errorMessage);
@@ -74,7 +74,7 @@ export default function LivrePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center px-2">
       <div className="max-w-2xl w-full bg-white rounded-3xl shadow-xl p-8">
         <div className="flex flex-col md:flex-row gap-6">
           <img
@@ -148,15 +148,16 @@ export default function LivrePage() {
                   rows={3}
                   className="w-full text-base text-gray-800 font-medium border-b border-gray-300 px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                 />
-                <div className="flex gap-4"><label htmlFor="quantite" className="text-gray-700 font-medium min-w-[80px]">
+                {/* <div className="flex gap-4"><label htmlFor="quantite" className="text-gray-700 font-medium min-w-[80px]">
                     Prix :60.000 DT
                   </label>
                 
                 <label htmlFor="quantite" className="text-gray-700 font-medium min-w-[80px]">
                     Livraison gratuite
-                  </label></div>
-                <div className="flex items-center justify-between gap-2 mt-4">
-                  <label htmlFor="quantite" className="text-gray-700 font-medium min-w-[80px]">
+                  </label></div> */}
+
+                <div className="flex items-center gap-1 mt-2">
+                  <label htmlFor="quantite" className="text-gray-700 font-medium min-w-[20px]">
                     Quantité :
                   </label>
                   <input
@@ -166,12 +167,15 @@ export default function LivrePage() {
                     min={1}
                     onChange={(e) => setQuantite(Number(e.target.value))}
                     required
-                    className="w-20 text-center text-gray-800 font-medium rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                    className="w-20 text-center text-gray-800 font-medium rounded-lg border border-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                   />
-                  <div className="ml-auto font-semibold text-lg text-green-700 ">
-                    Prix total : {prixTotal.toFixed(3)} DT
-                  </div>
                 </div>
+
+
+                <div className="ml-auto font-semibold text-lg text-green-700 ">
+                  Prix total : {prixTotal.toFixed(3)} DT
+                </div>
+
 
 
                 <button
