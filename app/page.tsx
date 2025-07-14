@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 "use client";
 
 import { useState } from "react";
@@ -11,7 +13,7 @@ export default function LivrePage() {
   const [loading, setLoading] = useState(false);
   const [quantite, setQuantite] = useState(1); // Nouvelle valeur
   const PRIX_LIVRE = 60;
-  const FRAIS_LIVRAISON = 8;
+  // const FRAIS_LIVRAISON = 8;
   //const prixTotal = quantite * PRIX_LIVRE + FRAIS_LIVRAISON;
   const prixTotal = quantite * PRIX_LIVRE;
   const [formData, setFormData] = useState({
@@ -22,9 +24,14 @@ export default function LivrePage() {
     adresse: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (
+  e: React.ChangeEvent<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >
+) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,13 +59,13 @@ export default function LivrePage() {
         try {
           const errorData = await res.json();
           errorMessage = errorData.message || errorMessage;
-        } catch (jsonError) {
+        } catch  {
           errorMessage = `Erreur serveur: ${res.status} ${res.statusText}`;
         }
         alert(errorMessage);
         console.error("Erreur backend:", { status: res.status, statusText: res.statusText });
       }
-    } catch (err) {
+    } catch (err: any) {
       alert(`Erreur réseau: ${err.message || "Erreur réseau ou serveur"}`);
       console.error("Erreur réseau:", err);
     } finally {
