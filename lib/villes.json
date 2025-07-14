@@ -1,0 +1,27 @@
+[
+  { "ville": "Ariana", "code": "1" },
+  { "ville": "Beja", "code": "2" },
+  { "ville": "Ben Arous", "code": "3" },
+  { "ville": "Bizerte", "code": "4" },
+  { "ville": "Gabes", "code": "5" },
+  { "ville": "Gafsa", "code": "6" },
+  { "ville": "Jendouba", "code": "7" },
+  { "ville": "Kairouan", "code": "8" },
+  { "ville": "Kasserine", "code": "9" },
+  { "ville": "Kebili", "code": "10" },
+  { "ville": "Le Kef", "code": "11" },
+  { "ville": "Mahdia", "code": "12" },
+  { "ville": "Mannouba", "code": "13" },
+  { "ville": "Medenine", "code": "14" },
+  { "ville": "Monastir", "code": "15" },
+  { "ville": "Nabeul", "code": "16" },
+  { "ville": "Sfax", "code": "17" },
+  { "ville": "Sidi Bouzid", "code": "18" },
+  { "ville": "Siliana", "code": "19" },
+  { "ville": "Sousse", "code": "20" },
+  { "ville": "Tataouine", "code": "21" },
+  { "ville": "Tozeur", "code": "22" },
+  { "ville": "Tunis", "code": "23" },
+  { "ville": "Zaghouan", "code": "24" }
+
+]
