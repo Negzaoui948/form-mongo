@@ -74,13 +74,13 @@ export default function LivrePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center px-2">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center ">
       <div className="max-w-2xl w-full bg-white rounded-3xl shadow-xl p-8">
         <div className="flex flex-col md:flex-row gap-6">
           <img
             src="/livre.jpg"
             alt="Couverture du livre"
-            className="w-full md:w-1/2 rounded-xl shadow-md object-cover"
+            className="w-full md:w-1/2 rounded-xl w-full object-cover"
           />
 
           <div className="flex-1">
@@ -167,7 +167,7 @@ export default function LivrePage() {
                     min={1}
                     onChange={(e) => setQuantite(Number(e.target.value))}
                     required
-                    className="w-20 text-center text-gray-800 font-medium rounded-lg border border-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                    className="w-20 text-center text-gray-800 font-medium rounded-lg border border-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ml-4"
                   />
                 </div>
 
