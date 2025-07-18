@@ -12,7 +12,7 @@ export default function LivrePage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [quantite, setQuantite] = useState(1); // Nouvelle valeur
-  const PRIX_LIVRE = 60;
+  const PRIX_LIVRE = 30;
   // const FRAIS_LIVRAISON = 8;
   //const prixTotal = quantite * PRIX_LIVRE + FRAIS_LIVRAISON;
   const prixTotal = quantite * PRIX_LIVRE;
@@ -156,7 +156,7 @@ export default function LivrePage() {
                     Livraison gratuite
                   </label></div> */}
 
-                <div className="flex items-center gap-1 mt-2">
+                {/* <div className="flex items-center gap-1 mt-2">
                   <label htmlFor="quantite" className="text-gray-700 font-medium min-w-[20px]">
                     Quantité :
                   </label>
@@ -169,7 +169,41 @@ export default function LivrePage() {
                     required
                     className="w-20 text-center text-gray-800 font-medium rounded-lg border border-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ml-4"
                   />
-                </div>
+                </div> */}
+             <div className="flex items-center gap-3 mt-2">
+  <label htmlFor="quantite" className="text-gray-700 font-medium min-w-[80px]">
+    Quantité :
+  </label>
+
+  <button
+    type="button"
+    onClick={() => setQuantite(prev => Math.max(1, prev - 1))}
+    className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-3 py-1 rounded-full"
+  >
+    −
+  </button>
+
+  <input
+    id="quantite"
+    type="number"
+    value={quantite}
+    min={1}
+    onChange={(e) => setQuantite(Math.max(1, Number(e.target.value)))}
+    className="w-16 text-center text-gray-800 font-medium rounded-lg border border-gray-300 px-2 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition
+      [&::-webkit-inner-spin-button]:appearance-none 
+      [&::-webkit-outer-spin-button]:appearance-none 
+      [appearance:textfield]"
+  />
+
+  <button
+    type="button"
+    onClick={() => setQuantite(prev => prev + 1)}
+    className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-3 py-1 rounded-full"
+  >
+    +
+  </button>
+</div>
+
 
 
                 <div className="ml-auto font-semibold text-lg text-green-700 ">
